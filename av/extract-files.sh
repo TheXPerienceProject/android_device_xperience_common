@@ -24,4 +24,5 @@ set -e
 # Required!
 export COMPONENT=av
 export VENDOR=qcom/common
-"./../extract-files.sh" "$@"
+
+"../extract-files.sh" "$@"

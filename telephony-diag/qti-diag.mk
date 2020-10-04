@@ -12,19 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/telephony/framework_manifest.xml
-
-# Dependencies
-$(call inherit-product-if-exists, device/qcom/common/diag/qti-diag.mk)
-
-# Radio
-$(call inherit-product-if-exists, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
-
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio.deprecated@1.0 \
-    librmnetctl
-
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/qcom/common/telephony/telephony-vendor.mk)
+# Get non-open-source specific aspects.
+$(call inherit-product-if-exists, vendor/qcom/common/telephony-diag/telephony-diag-vendor.mk)

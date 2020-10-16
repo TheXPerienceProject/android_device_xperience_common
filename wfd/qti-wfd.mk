@@ -16,7 +16,8 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/wfd/framework_manifest
 
 PRODUCT_PACKAGES += \
     libnl \
-    libwfdaac
+    libwfdaac \
+    libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon

@@ -16,6 +16,7 @@ AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
 
 # Media
 PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor \
     libmediaplayerservice
 
 # Get non-open-source specific aspects

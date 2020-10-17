@@ -24,5 +24,8 @@ endif
 # Override proprietary definitions from QSSI audio HAL Makefile.
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
 
+PRODUCT_PACKAGES += \
+    libaudiohal
+
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/audio/audio-vendor.mk)

@@ -27,5 +27,8 @@ AUDIO_FEATURE_ENABLED_AHAL_EXT := true
 PRODUCT_PACKAGES += \
     libaudiohal
 
+PRODUCT_PACKAGES += \
+    libaudiohal
+
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/audio/audio-vendor.mk)

@@ -41,7 +41,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     overlay \
     perf \
     telephony \
-    wfd
+    wfd \
+    wlan
 endif
 
 # QTI common components
@@ -84,6 +85,10 @@ endif
 
 ifneq (,$(filter wfd, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/wfd/qti-wfd.mk
+endif
+
+ifneq (,$(filter wlan, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/wlan/qti-wlan.mk
 endif
 
 # 8998 series and older

@@ -14,11 +14,11 @@
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/telephony/framework_manifest.xml
 
+# IPACM
+$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+
 # Dependencies
 $(call inherit-product-if-exists, device/xperience/common/telephony-diag/qti-telephony-diag.mk)
-
-# Radio
-$(call inherit-product-if-exists, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
 
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
@@ -26,5 +26,5 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0 \
     librmnetctl
 
-# Get non-open-source specific aspects
+# Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/telephony/telephony-vendor.mk)

@@ -18,10 +18,10 @@ $(error "TARGET_BOARD_PLATFORM is not defined yet. Please define in your device 
 endif
 
 # Include display HAL makefiles.
-include hardware/qcom/display/config/display-board.mk
-include hardware/qcom/display/config/display-product.mk
+ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
 include vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk
 include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
+endif
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/qcom/common/display/display-vendor.mk)

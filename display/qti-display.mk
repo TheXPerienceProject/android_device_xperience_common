@@ -25,3 +25,6 @@ endif
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/qcom/common/display/display-vendor.mk)
+
+#-include hardware/qcom/display/$(QCOM_HARDWARE_VARIANT)/config/display-product.mk
+#-include hardware/qcom/display/$(QCOM_HARDWARE_VARIANT)/config/display-board.mk

@@ -24,8 +24,9 @@ endif
 # Override proprietary definitions from SoC audio makefile.
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
 
-PRODUCT_PACKAGES += \
-    libaudiohal
+# Override proprietary definitions from SoC audio HAL Makefiles.
+AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
+AUDIO_FEATURE_ENABLED_SSR := false
 
 PRODUCT_PACKAGES += \
     libaudiohal

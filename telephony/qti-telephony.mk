@@ -21,7 +21,8 @@ $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_pro
 $(call inherit-product-if-exists, device/xperience/common/telephony-diag/qti-telephony-diag.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
+    CellBroadcastReceiver \
+    android.hardware.radio@1.5 \
     android.hardware.radio.config@1.2 \
     android.hardware.radio.deprecated@1.0 \
     libjson \

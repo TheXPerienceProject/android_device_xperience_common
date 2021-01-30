@@ -14,10 +14,3 @@
 
 soong_namespace {
 }
-
-prebuilt_etc {
-    name: "init.xperience.usb.rc",
-    src: "init.xperience.usb.rc",
-    sub_dir: "init",
-    vendor: true,
-}

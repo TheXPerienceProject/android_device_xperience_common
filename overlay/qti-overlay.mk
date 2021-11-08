@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/overlay
+    device/xperience/common/overlay
 
 # Overlays
 PRODUCT_PACKAGES += \

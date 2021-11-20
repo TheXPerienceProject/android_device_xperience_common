@@ -1,5 +1,7 @@
 system_ext/bin/sigma_miracasthalservice
+system_ext/bin/sigma_miracasthalservice64
 system_ext/bin/wfdservice
+system_ext/bin/wfdservice64
 system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
 system_ext/etc/init/wfdservice.rc
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml

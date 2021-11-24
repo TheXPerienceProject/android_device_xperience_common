@@ -13,11 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-<<<<<<< HEAD:overlay/qti-overlay.mk
-    device/xperience/common/overlay
-=======
-    device/qcom/common/system/overlay
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):system/overlay/qti-overlay.mk
+    device/xperience/common/system/overlay
 
 # Overlays
 PRODUCT_PACKAGES += \

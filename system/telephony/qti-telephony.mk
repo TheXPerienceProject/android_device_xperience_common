@@ -13,25 +13,17 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-<<<<<<< HEAD:telephony/qti-telephony.mk
-    device/xperience/common/telephony
-=======
-    device/qcom/common/system/telephony
+    device/xperience/common/system/telephony
 
 # APN List
 PRODUCT_COPY_FILES += \
     $(QCOM_COMMON_PATH)/system/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):system/telephony/qti-telephony.mk
 
 # Data Services
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
 
 # HIDL
-<<<<<<< HEAD:telephony/qti-telephony.mk
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/telephony/framework_manifest.xml
-=======
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(QCOM_COMMON_PATH)/system/telephony/framework_manifest.xml
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):system/telephony/qti-telephony.mk
 
 # IPACM
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
@@ -98,16 +90,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableQXDMLogs=1
 endif
 
-<<<<<<< HEAD:telephony/qti-telephony.mk
-=======
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
     $(QCOM_COMMON_PATH)/system/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
-# Sounds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=Leaps_and_bounds.ogg
-
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):system/telephony/qti-telephony.mk
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/system/telephony/telephony-vendor.mk)

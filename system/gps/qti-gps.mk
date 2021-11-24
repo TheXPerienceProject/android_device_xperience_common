@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/system/gps
+    device/xperience/common/system/gps
 
 # Flags
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default

@@ -13,11 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-<<<<<<< HEAD:wlan/qti-wlan.mk
-    device/xperience/common/wlan
-=======
-    device/qcom/common/vendor/wlan
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):vendor/wlan/qti-wlan.mk
+    device/xperience/common/vendor/wlan
 
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211

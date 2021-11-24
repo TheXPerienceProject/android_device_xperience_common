@@ -12,11 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-<<<<<<< HEAD:wfd-legacy/qti-wfd-legacy.mk
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/wfd-legacy/framework_manifest.xml
-=======
 DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/system/wfd-legacy/framework_manifest.xml
->>>>>>> 611bc080 ([WIP] Split system and vendor to their own folders.):system/wfd-legacy/qti-wfd-legacy.mk
 
 PRODUCT_PACKAGES += \
     libnl \

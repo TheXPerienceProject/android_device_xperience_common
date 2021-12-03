@@ -14,13 +14,17 @@
 # limitations under the License.
 
 # Boot Jars
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
+# PRODUCT_BOOT_JARS += \
+#    QPerformance \
+#    UxPerformance
 
 # Libdexfile
+PRODUCT_HOST_PACKAGES += \
+    libdexfile \
+    libdexfile_support
+
 PRODUCT_PACKAGES += \
-    libdexfile
+    libdexfile_support
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/qcom/common/system/perf/perf-vendor.mk)

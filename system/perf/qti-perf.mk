@@ -14,9 +14,9 @@
 # limitations under the License.
 
 # Boot Jars
-# PRODUCT_BOOT_JARS += \
-#    QPerformance \
-#    UxPerformance
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
 
 # Libdexfile
 PRODUCT_HOST_PACKAGES += \

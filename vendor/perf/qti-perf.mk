@@ -1,4 +1,5 @@
 # Copyright (C) 2021 Paranoid Android
+# Copyright (C) 2021 The XPerience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -46,7 +47,14 @@ endif
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.games.gt.prof=1 \
     ro.vendor.extension_library=libqti-perfd-client.so \
+    ro.vendor.perf.scroll_opt=true \
+    ro.vendor.perf.scroll_opt.heavy_app=true \
+    vendor.enable_prefetch=1 \
+    vendor.iop.enable_uxe=1 \
+    vendor.iop.enable_prefetch_ofr=1 \
+    vendor.perf.iop_v3.enable=1 \
     vendor.power.pasr.enabled=true
 
 ifeq ($(call is-board-platform-in-list, lahaina),true)
@@ -55,12 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.beluga.c=0x4800 \
     ro.vendor.beluga.s=0x900 \
     ro.vendor.beluga.t=0x240
-endif
-
-ifeq ($(TARGET_KERNEL_VERSION),5.4)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.perf.scroll_opt=true \
-    vendor.power.pasr.enabled=true
 endif
 
 # Get non-open-source specific aspects

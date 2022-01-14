@@ -66,9 +66,9 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml
 
-PRODUCT_BOOT_JARS += \
-    tcmiface \
-    telephony-ext
+# PRODUCT_BOOT_JARS += \
+#    tcmiface \
+#    telephony-ext
 
 # Permissions
 PRODUCT_COPY_FILES += \

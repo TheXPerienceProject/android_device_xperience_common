@@ -58,9 +58,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.iop.enable_prefetch_ofr=1 \
     vendor.perf.iop_v3.enable=1 \
     vendor.power.pasr.enabled=true \
-    vendor.pasr.activemode.enabled=true
+    vendor.pasr.activemode.enabled=true \
+    ro.vendor.qspm.enable=true
 
-ifeq ($(call is-board-platform-in-list, lahaina),true)
+ifeq ($(call is-board-platform-in-list, kona lahaina taro),true)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.beluga.p=0x3 \
     ro.vendor.beluga.c=0x4800 \

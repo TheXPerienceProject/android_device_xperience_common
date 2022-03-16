@@ -16,8 +16,7 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/system/wfd/framework_m
 
 PRODUCT_PACKAGES += \
     libavservices_minijail \
-    libnl \
-    libwfdaac
+    libnl
 
 PRODUCT_BOOT_JARS += \
     WfdCommon

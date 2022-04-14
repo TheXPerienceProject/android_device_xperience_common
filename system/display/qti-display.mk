@@ -30,7 +30,6 @@ PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti \
     libqdutils \
     libqservice \
-    libtinyxml \
     lights.qcom
 
 # Get non-open-source specific aspects.

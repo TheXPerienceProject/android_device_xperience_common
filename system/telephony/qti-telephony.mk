@@ -14,10 +14,10 @@
 
 # APN List
 PRODUCT_COPY_FILES += \
-    $(QCOM_COMMON_PATH)/system/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+    device/xperience/common/system/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE += $(QCOM_COMMON_PATH)/system/telephony/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/system/telephony/framework_manifest.xml
 
 # Packages
 PRODUCT_PACKAGES += \
@@ -77,7 +77,7 @@ endif
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    $(QCOM_COMMON_PATH)/system/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+    device/xperience/common/system/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/system/telephony/telephony-vendor.mk)

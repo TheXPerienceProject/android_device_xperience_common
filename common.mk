@@ -15,6 +15,9 @@
 DEVICE_PATH := device/xperience/common
 QCOM_COMMON_PATH := $(DEVICE_PATH)
 
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 ifeq ($(TARGET_BOARD_PLATFORM),)
 $(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile so it's accessible to QCOM common.")
 endif
@@ -136,22 +139,29 @@ MASTER_SIDE_CP_TARGET_LIST := \
 
 ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.4
+TARGET_VARIANT := sm8350
 else ifeq ($(call is-board-platform-in-list,$(4_19_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.19
+TARGET_VARIANT := sm8250
 else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.14
+TARGET_VARIANT := sm8150
 else ifeq ($(call is-board-platform-in-list,$(4_9_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.9
+TARGET_VARIANT := sdm845
 else ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.4
+TARGET_VARIANT := msm8998
 else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 3.18
+TARGET_VARIANT := msm89986
 endif
 
 # Components
 include $(DEVICE_PATH)/components.mk
 
 ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
+$(warning "$(QCOM_BOARD_PLATFORMS)")
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
 # Compatibility matrix
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \

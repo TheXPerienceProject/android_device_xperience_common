@@ -15,27 +15,26 @@
 # Inherit from QSSI audio makefile.
 include $(TOPDIR)vendor/qcom/opensource/commonsys/audio/configs/qssi/qssi.mk
 
-ifneq ($(filter sm6150,$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/sm8150/audio/configs/msmsteppe/msmsteppe.mk
-else ifneq ($(filter $(UM_5_4_FAMILY),$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/sm8350/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/sm8350)/audio.")
-else ifneq ($(filter $(UM_4_19_FAMILY),$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/sm8250/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/sm8250)/audio.")
-else ifneq ($(filter $(UM_4_14_FAMILY),$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/sm8150/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/sm8150)/audio.")
-else ifneq ($(filter $(UM_4_9_FAMILY),$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/sdm845/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/sdm845)/audio.")
-else ifneq ($(filter $(UM_3_18_FAMILY),$(TARGET_BOARD_PLATFORM)),)
--include $(TOPDIR)hardware/qcom-caf/msm8998/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/msm8998)/audio.")
-else
--include $(TOPDIR)hardware/qcom-caf/$(TARGET_BOARD_PLATFORM)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-$(warning "$(TOPDIR)hardware/qcom-caf/$(TARGET_BOARD_PLATFORM))/audio.")
+5_4_FM := lahaina holi
+4_19_FM := bengal kona lito
+4_14_FM := trinket atoll msmnile msmnile_au
+
+ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8350
+else ifneq ($(filter $(4_19_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8250
+else ifneq ($(filter $(4_14_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8150
+else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sdm845
 endif
+
+ifeq ($(call is-board-platform-in-list,sm6150),true)
+-include $(TOPDIR)hardware/qcom-caf/sm8150/configs/msmsteppe/msmsteppe.mk
+else
+-include $(TOPDIR)hardware/qcom-caf/$(VARIANT)/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
+endif
+$(warning "$(TOPDIR)hardware/qcom-caf/$(VARIANT)/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk")
 
 # Override proprietary definitions from SoC audio makefile.
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false

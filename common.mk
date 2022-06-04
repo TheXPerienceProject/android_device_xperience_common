@@ -106,6 +106,9 @@ MASTER_SIDE_CP_TARGET_LIST := \
     sdm710 \
     sdm845
 
+# Include QCOM board utilities.
+include $(QCOM_COMMON_PATH)/utils.mk
+
 # Kernel Families
 5_4_FAMILY := \
     holi \

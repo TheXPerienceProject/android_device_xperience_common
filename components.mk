@@ -15,6 +15,20 @@
 # Current system tag :- LA.QSSI.12.0.r1-07100-qssi.0
 # Current vendor tag :- LA.UM.9.14.r1-19300.01-LAHAINA.QSSI12.0
 
+5_4_FM := lahaina holi
+4_19_FM := bengal kona lito
+4_14_FM := trinket atoll msmnile msmnile_au
+
+ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8350
+else ifneq ($(filter $(4_19_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8250
+else ifneq ($(filter $(4_14_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8150
+else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sdm845
+endif
+
 ifeq ($(TARGET_COMMON_QTI_COMPONENTS), all)
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
@@ -31,7 +45,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wlan
 
-ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
+ifeq ($(call is-board-platform-in-list,$(5_4_FM)),true)
 TARGET_COMMON_QTI_COMPONENTS += media
 else
 TARGET_COMMON_QTI_COMPONENTS += media-legacy
@@ -63,9 +77,9 @@ ifneq (,$(filter gps, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(QCOM_COMMON_PATH)/system/gps/qti-gps.mk
 endif
 
-#ifneq (,$(filter init, $(TARGET_COMMON_QTI_COMPONENTS)))
-#include $(QCOM_COMMON_PATH)/vendor/init/qti-init.mk
-#endif
+ifneq (,$(filter init, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(QCOM_COMMON_PATH)/vendor/init/qti-init.mk
+endif
 
 ifneq (,$(filter overlay, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(QCOM_COMMON_PATH)/system/overlay/qti-overlay.mk

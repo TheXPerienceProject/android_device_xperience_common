@@ -18,6 +18,7 @@ include vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-
 include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
 include vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk
 #endif
+$(warning "vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk")
 
 # Permissions
 PRODUCT_COPY_FILES += \

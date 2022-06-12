@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-ifeq ($(call is-board-platform-in-list, lahaina),true)
+ifneq ($(filter lahaina,$(TARGET_BOARD_PLATFORM)),)
 PRODUCT_PACKAGES += \
     init.vendor.wlan.rc
 endif
@@ -54,11 +54,11 @@ endif
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
 
 # Include QCOM WLAN makefiles.
-ifeq ($(call is-board-platform-in-list,sdm845),true)
+ifneq ($(filter sdm845,$(TARGET_BOARD_PLATFORM)),)
 -include device/qcom/wlan/skunk/wlan.mk
-else ifeq ($(call is-board-platform-in-list,msm8998 sdm660),true)
+else ifneq ($(filter msm8998 sdm660,$(TARGET_BOARD_PLATFORM)),)
 -include device/qcom/wlan/sdm660_64/wlan.mk
-else ifeq ($(call is-board-platform-in-list,sm6150),true)
+else ifneq ($(filter sm6150,$(TARGET_BOARD_PLATFORM)),)
 -include device/qcom/wlan/talos/wlan.mk
 else
 -include device/qcom/wlan/$(TARGET_BOARD_PLATFORM)/wlan.mk

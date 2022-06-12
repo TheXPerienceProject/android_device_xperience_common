@@ -107,8 +107,7 @@ MASTER_SIDE_CP_TARGET_LIST := \
     sdm845
 
 # Include QCOM board utilities.
-include $(QCOM_COMMON_PATH)/utils.mk
-
+include $(DEVICE_PATH)/utils.mk
 # Kernel Families
 5_4_FAMILY := \
     holi \
@@ -140,36 +139,31 @@ include $(QCOM_COMMON_PATH)/utils.mk
     msm8937 \
     msm8996
 
-ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
+ifneq ($(filter $(5_4_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+#ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.4
-TARGET_VARIANT := sm8350
-else ifeq ($(call is-board-platform-in-list,$(4_19_FAMILY)),true)
+else ifneq ($(filter $(4_19_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 TARGET_KERNEL_VERSION ?= 4.19
-TARGET_VARIANT := sm8250
-else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY)),true)
+else ifneq ($(filter $(4_14_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 TARGET_KERNEL_VERSION ?= 4.14
-TARGET_VARIANT := sm8150
-else ifeq ($(call is-board-platform-in-list,$(4_9_FAMILY)),true)
+else ifneq ($(filter $(4_9_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 TARGET_KERNEL_VERSION ?= 4.9
-TARGET_VARIANT := sdm845
-else ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY)),true)
+else ifneq ($(filter $(4_4_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 TARGET_KERNEL_VERSION ?= 4.4
-TARGET_VARIANT := msm8998
-else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)
+else ifneq ($(filter $(3_18_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 TARGET_KERNEL_VERSION ?= 3.18
-TARGET_VARIANT := msm89986
 endif
 
-# Components
-include $(DEVICE_PATH)/components.mk
-
-ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
-$(warning "$(QCOM_BOARD_PLATFORMS)")
+ifneq ($(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+#$(warning "TARGET_FWK_SUPPORTS_FULL_VALUEADDS$(TARGET_FWK_SUPPORTS_FULL_VALUEADDS)")
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
 # Compatibility matrix
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
 endif
+
+# Components
+include $(QCOM_COMMON_PATH)/components.mk
 
 # Power
 ifneq ($(TARGET_PROVIDES_POWERHAL),true)

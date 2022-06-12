@@ -23,6 +23,10 @@ include vendor/qcom/opensource/commonsys-intf/display/config/display-product-sys
 include vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk
 endif
 
+PRODUCT_SOONG_NAMESPACE += \
+    vendor/qcom/opensource/commonsys-intf/display/libqdmetadata \
+    vendor/qcom/opensource/commonsys/display/libqdmetadata
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml

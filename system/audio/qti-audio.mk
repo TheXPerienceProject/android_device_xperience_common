@@ -29,12 +29,12 @@ else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
 VARIANT := sdm845
 endif
 
-ifeq ($(call is-board-platform-in-list,sm6150),true)
--include $(TOPDIR)hardware/qcom-caf/sm8150/configs/msmsteppe/msmsteppe.mk
+ifneq ($(filter sm6150,$(TARGET_BOARD_PLATFORM)),)
+-include $(TOPDIR)hardware/qcom-caf/sm8150/audio/configs/msmsteppe/msmsteppe.mk
 else
--include $(TOPDIR)hardware/qcom-caf/$(VARIANT)/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
+-include $(TOPDIR)hardware/qcom-caf/$(VARIANT)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 endif
-$(warning "$(TOPDIR)hardware/qcom-caf/$(VARIANT)/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk")
+#$(warning "$(TOPDIR)hardware/qcom-caf/$(VARIANT)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk")
 
 # Override proprietary definitions from SoC audio makefile.
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false

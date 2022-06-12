@@ -37,7 +37,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     gps \
     init \
-    nq-nfc \
     overlay \
     perf \
     telephony \
@@ -45,19 +44,19 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wlan
 
-ifeq ($(call is-board-platform-in-list,$(5_4_FM)),true)
+ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
 TARGET_COMMON_QTI_COMPONENTS += media
 else
 TARGET_COMMON_QTI_COMPONENTS += media-legacy
 endif
 
-ifneq (,$(filter true, $(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953)))
+ifneq ($(filter $(3_18_FAMILY) $(4_4_FAMILY) msm8953,$(TARGET_BOARD_PLATFORM)),)
 TARGET_COMMON_QTI_COMPONENTS += adreno-legacy
 else
 TARGET_COMMON_QTI_COMPONENTS += adreno
 endif
 
-ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953),true)
+ifneq ($(filter $(3_18_FAMILY) $(4_4_FAMILY) msm8953,$(TARGET_BOARD_PLATFORM)),)
 TARGET_COMMON_QTI_COMPONENTS += wfd-legacy
 else
 TARGET_COMMON_QTI_COMPONENTS += wfd

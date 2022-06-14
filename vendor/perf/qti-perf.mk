@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Properties
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qti.games.gt.prof=1 \
     ro.vendor.perf-hal.ver=2.2 \
     ro.vendor.extension_library=libqti-perfd-client.so \
@@ -62,7 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qspm.enable=true
 
 ifeq ($(call is-board-platform-in-list, kona lahaina taro),true)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.beluga.p=0x3 \
     ro.vendor.beluga.c=0x4800 \
     ro.vendor.beluga.s=0x900 \

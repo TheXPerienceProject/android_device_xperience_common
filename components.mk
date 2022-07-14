@@ -14,10 +14,10 @@
 
 # Current system tag :- LA.QSSI.12.0.r1-07100-qssi.0
 # Current vendor tag :- LA.UM.9.14.r1-19300.01-LAHAINA.QSSI12.0
-
+MSMSTEPPE := sm6150
 5_4_FM := lahaina holi
 4_19_FM := bengal kona lito
-4_14_FM := trinket atoll msmnile msmnile_au
+4_14_FM := trinket atoll msmnile msmnile_au $(MSMSTEPPE)
 
 ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
 VARIANT := sm8350

@@ -167,7 +167,9 @@ include $(QCOM_COMMON_PATH)/components.mk
 
 # Power
 ifneq ($(TARGET_PROVIDES_POWERHAL),true)
+ifneq ($(TARGET_PROVIDES_XIAOMI_POWERHAL), true)
 $(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
+endif
 endif
 
 # Public Libraries

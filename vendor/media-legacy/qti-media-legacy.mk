@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES += \
 
 # Media Profiles
 PRODUCT_COPY_FILES += \
-    device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+    device/xperience/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 # Packages
 PRODUCT_PACKAGES += \

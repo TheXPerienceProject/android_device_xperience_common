@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/vendor/usb
+    device/xperience/common/vendor/usb
 
 # Inherit from the USB product definition.
 $(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
@@ -31,4 +31,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
 PRODUCT_PACKAGES += \
-    init.aospa.usb.rc
+    init.xperience.usb.rc

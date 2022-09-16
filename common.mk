@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-QCOM_COMMON_PATH := device/qcom/common
+QCOM_COMMON_PATH := device/xperience/common
 
 ifeq ($(TARGET_BOARD_PLATFORM),)
 $(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile so it's accessible to QCOM common.")
@@ -173,7 +173,9 @@ TARGET_FS_CONFIG_GEN += $(QCOM_COMMON_PATH)/config.fs
 
 # Power
 ifneq ($(TARGET_PROVIDES_POWERHAL),true)
+ifneq ($(TARGET_PROVIDES_XIAOMI_POWERHAL), true)
 $(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
+endif
 endif
 
 # Public Libraries

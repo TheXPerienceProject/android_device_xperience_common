@@ -13,7 +13,8 @@
 # limitations under the License.
 
 # Inherit configuration from the HAL.
-$(call inherit-product-if-exists, hardware/qcom/media/product.mk)
+$(call inherit-product-if-exists, hardware/qcom-caf/$(VARIANT)/media/product.mk)
+$(warning "Media variant is $(VARIANT)")
 
 # Media Codecs
 PRODUCT_COPY_FILES += \

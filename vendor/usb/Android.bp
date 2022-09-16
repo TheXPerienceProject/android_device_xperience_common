@@ -16,8 +16,8 @@ soong_namespace {
 }
 
 prebuilt_etc {
-    name: "init.aospa.usb.rc",
-    src: "init.aospa.usb.rc",
+    name: "init.xperience.usb.rc",
+    src: "init.xperience.usb.rc",
     sub_dir: "init",
     vendor: true,
 }

@@ -13,8 +13,9 @@
 # limitations under the License.
 
 # Include display HAL makefiles.
--include hardware/qcom/display/config/display-board.mk
--include hardware/qcom/display/config/display-product.mk
+-include hardware/qcom-caf/$(VARIANT)/display/config/display-board.mk
+-include hardware/qcom-caf/$(VARIANT)/display/config/display-product.mk
+$(warning "variant is $(VARIANT)")
 
 # Permissions
 PRODUCT_COPY_FILES += \

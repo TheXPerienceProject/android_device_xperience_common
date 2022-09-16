@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/vendor/perf
+    device/xperience/common/vendor/perf
 
 # Configs
 PRODUCT_COPY_FILES += \
@@ -35,7 +35,7 @@ endif
 # Packages
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
-    init.aospa.perf.rc \
+    init.xperience.perf.rc \
     libavservices_minijail.vendor \
     libpsi.vendor \
     libtflite \

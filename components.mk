@@ -15,6 +15,21 @@
 # Current system tag :- LA.QSSI.13.0.r1-05800-qssi.0
 # Current vendor tag :- LA.UM.9.14.r1-20200-LAHAINA.QSSI13.0
 
+MSMSTEPPE := sm6150
+5_4_FM := lahaina holi
+4_19_FM := bengal kona lito
+4_14_FM := trinket atoll msmnile msmnile_au $(MSMSTEPPE)
+
+ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8350
+else ifneq ($(filter $(4_19_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8250
+else ifneq ($(filter $(4_14_FM),$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sm8150
+else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
+VARIANT := sdm845
+endif
+
 ifeq ($(TARGET_COMMON_QTI_COMPONENTS), all)
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \

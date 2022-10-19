@@ -101,7 +101,9 @@ MASTER_SIDE_CP_TARGET_LIST := \
 endif
 
 # Include QCOM board utilities.
-include $(QCOM_COMMON_PATH)/utils.mk
+ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
+include vendor/qcom/opensource/core-utils/build/utils.mk
+endif
 
 6_1_FAMILY := \
     pineapple

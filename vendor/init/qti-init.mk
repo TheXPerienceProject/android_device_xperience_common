@@ -56,10 +56,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.qti.kernel.rc \
     init.qti.kernel.sh \
-    vendor_modprobe.sh
+    init.qti.write.sh
 else
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.all.modules.ready=1
+
+# If modules are present, load them.  If not, skip.
+ifneq ($(KERNEL_MODULES_OUT),)
+PRODUCT_PACKAGES += \
+    vendor_modprobe.sh
+else
+PRODUCT_PACKAGES += \
+    vendor_modprobe_no_modules.sh
 endif
 
 endif

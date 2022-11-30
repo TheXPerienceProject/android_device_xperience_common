@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_SOONG_NAMESPACES += \
+    device/xperience/common/vendor/media
+
+TARGET_MEDIA_COMPONENT_VARIANT := media
+
 # Inherit configuration from the HAL.
 $(call inherit-product-if-exists, hardware/qcom-caf/$(VARIANT)/media/product.mk)
 $(warning "Media variant is $(VARIANT)")

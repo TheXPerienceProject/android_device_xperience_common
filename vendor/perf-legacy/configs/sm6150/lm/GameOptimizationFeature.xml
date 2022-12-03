@@ -70,7 +70,7 @@
                 </Trigger>
 
                 <Trigger>
-                  <Primary>true</Primary>
+                   <Primary>true</Primary>
                    <AsyncId>VENDOR_HINT_ACTIVITY_STOP</AsyncId>
                    <AsyncType>-1</AsyncType>
                 </Trigger>

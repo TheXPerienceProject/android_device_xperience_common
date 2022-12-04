@@ -15,7 +15,7 @@
 TARGET_PERF_COMPONENT_VARIANT := perf-legacy
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/vendor/perf-legacy
+    device/xperience/common/vendor/perf-legacy
 
 # Configs
 PRODUCT_COPY_FILES += \

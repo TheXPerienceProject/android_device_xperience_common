@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/system/wfd-legacy/configs/vintf/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/system/wfd-legacy/configs/vintf/framework_manifest.xml
 
 PRODUCT_PACKAGES += \
     libnl

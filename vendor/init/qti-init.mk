@@ -13,7 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/vendor/init
+    device/xperience/common/vendor/init
 
 # Init
 PRODUCT_PACKAGES += \

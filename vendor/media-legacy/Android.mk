@@ -8,4 +8,3 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_COPY_HEADERS)
 endif
 
-endif

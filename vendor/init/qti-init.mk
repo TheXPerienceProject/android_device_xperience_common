@@ -57,4 +57,9 @@ PRODUCT_PACKAGES += \
     init.qti.kernel.rc \
     init.qti.kernel.sh \
     vendor_modprobe.sh
+else
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.all.modules.ready=1
+endif
+
 endif

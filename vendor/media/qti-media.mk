@@ -46,8 +46,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 ifeq ($(TARGET_BOARD_PLATFORM), bengal)
 PRODUCT_COPY_FILES += \
-    device/qcom/common/vendor/media/init.qti.media.bengal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.media.rc \
-    device/qcom/common/vendor/media/init.qti.media.bengal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.media.sh
+    device/xperience/common/vendor/media/init.qti.media.bengal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.media.rc \
+    device/xperience/common/vendor/media/init.qti.media.bengal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.media.sh
 
 # Packages
 PRODUCT_PACKAGES += \
@@ -60,7 +60,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.c2.preferred=true \
     vendor.qc2audio.suspend.enabled=true \
     vendor.qc2audio.per_frame.flac.dec.enabled=true
-
 endif
 
 #---------------------------------------------------------------------------------------------------
@@ -78,6 +77,10 @@ ifeq ($(TARGET_BOARD_PLATFORM), lahaina)
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.c2.preferred=true
 endif
+
+# Media Init
+PRODUCT_COPY_FILES += \
+    device/xperience/common/vendor/media/init.qti.media.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.media.sh
 
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/vendor/media/media-vendor.mk)

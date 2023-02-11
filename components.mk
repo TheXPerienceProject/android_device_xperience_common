@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Current system tag :- LA.QSSI.13.0.r1-08200-qssi.0
-# Current vendor tag :- LA.UM.9.14.r1-20200-LAHAINA.QSSI13.0
-
 MSMSTEPPE := sm6150
 5_4_FM := lahaina holi
 4_19_FM := bengal kona lito

@@ -9,5 +9,6 @@ SOONG_CONFIG_qtidisplay := gralloc_handle_has_no_reserved_size
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_no_reserved_size := false
 
 ifeq ($(TARGET_GRALLOC_HANDLE_HAS_NO_RESERVED_SIZE),true)
+$(warning SOONG_CONFIG_qtidisplay_gralloc_handle_has_no_reserved_size is true)
     SOONG_CONFIG_qtidisplay_gralloc_handle_has_no_reserved_size := true
 endif

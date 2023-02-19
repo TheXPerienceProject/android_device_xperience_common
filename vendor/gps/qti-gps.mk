@@ -31,3 +31,5 @@ PRODUCT_COPY_FILES += \
 
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/vendor/gps/gps-vendor.mk)
+
+TARGET_USE_GPS_QCOM := true

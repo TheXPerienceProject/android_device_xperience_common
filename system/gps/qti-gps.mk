@@ -18,3 +18,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/system/gps/gps-vendor.mk)
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/gps

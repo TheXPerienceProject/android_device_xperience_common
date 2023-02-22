@@ -41,7 +41,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1
 
-ifeq ($(TARGET_BOARD_PLATFORM), holi)
+ifeq ($(TARGET_BOARD_PLATFORM), holi lahaina)
 # Vendor property to enable fetching of QoS parameters via IQtiRadio HAL
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.fetchqos=true

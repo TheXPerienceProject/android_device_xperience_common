@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Paranoid Android
+# Copyright (C) 2022 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_SOONG_NAMESPACES += \
-    device/xperience/common/vendor/wlan
+    device/qcom/common/vendor/wlan-legacy
 
-TARGET_WLAN_COMPONENT_VARIANT := wlan
+TARGET_WLAN_COMPONENT_VARIANT := wlan-legacy
 
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -53,12 +53,18 @@ PRODUCT_PACKAGES += \
 endif
 
 # Enable IEEE 802.11ax support
-ifeq ($(call is-board-platform-in-list, kona lahaina),true)
+ifeq ($(call is-board-platform-in-list, kona lahaina holi taro),true)
 CONFIG_IEEE80211AX := true
 endif
 
 # IPACM
+ifneq (,$(filter 5.10, $(TARGET_KERNEL_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+else
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr-legacy
+$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr-legacy/ipacm_vendor_product.mk)
+endif
 
 # Include QCOM WLAN makefiles.
 ifeq ($(call is-board-platform-in-list,sdm845),true)
@@ -72,4 +78,4 @@ else
 endif
 
 # Get non-open-source specific aspects.
-$(call inherit-product-if-exists, vendor/qcom/common/vendor/wlan/wlan-vendor.mk)
+$(call inherit-product-if-exists, vendor/qcom/common/vendor/wlan-legacy/wlan-legacy-vendor.mk)

@@ -91,6 +91,10 @@ ifneq (,$(filter gralloc_not_reserved, $(TARGET_COMMON_QTI_COMPONENTS)))
   include $(QCOM_COMMON_PATH)/system/display/gralloc_reserved_soong.mk
 endif
 
+ifneq (,$(filter dsprpcd, $(TARGET_COMMON_QTI_COMPONENTS)))
+  include $(QCOM_COMMON_PATH)/vendor/dsprpcd/qti-dsprpcd.mk
+endif
+
 ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
   include $(QCOM_COMMON_PATH)/dlkm/qti-dlkm.mk
 endif

@@ -29,19 +29,14 @@ QCOM_BOARD_PLATFORMS += \
     apq8098_latv \
     atoll \
     bengal \
+    bengal_515 \
     holi \
     kona \
+    kona_515 \
+    kalama \
     lahaina \
     lito \
-    mpq8092 \
-    msm8226 \
-    msm8610 \
-    msm8909 \
-    msm8909_512 \
-    msm8916 \
-    msm8916_32 \
-    msm8916_32_512 \
-    msm8916_64 \
+    monaco \
     msm8937 \
     msm8952 \
     msm8953 \
@@ -108,6 +103,12 @@ MASTER_SIDE_CP_TARGET_LIST := \
 include $(QCOM_COMMON_PATH)/utils.mk
 
 # Kernel Families
+5_15_FAMILY := \
+    bengal_515 \
+    kona_515 \
+    kalama \
+    monaco
+
 5_10_FAMILY := \
     parrot \
     taro
@@ -142,7 +143,9 @@ include $(QCOM_COMMON_PATH)/utils.mk
     msm8937 \
     msm8996
 
-ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
+ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
+TARGET_KERNEL_VERSION ?= 5.15
+else ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.10
 else ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.4

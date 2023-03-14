@@ -30,7 +30,9 @@ else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
 VARIANT := sdm845
 endif
 
-ifeq ($(TARGET_COMMON_QTI_COMPONENTS), all)
+#ifeq ($(TARGET_COMMON_QTI_COMPONENTS), all)
+
+ifneq (,$(filter all, $(TARGET_COMMON_QTI_COMPONENTS)))
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     audio \
@@ -47,7 +49,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     usb \
     vibrator \
     wfd \
-    wlan
+    wlan \
+    $(filter-out all,$(TARGET_COMMON_QTI_COMPONENTS))
 endif
 
 # QTI Common Components

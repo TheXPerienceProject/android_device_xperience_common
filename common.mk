@@ -105,6 +105,7 @@ include $(QCOM_COMMON_PATH)/utils.mk
 # Kernel Families
 5_15_FAMILY := \
     bengal_515 \
+    crow \
     kona_515 \
     kalama \
     monaco

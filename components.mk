@@ -58,7 +58,7 @@ endif
 ifneq (,$(filter adreno, $(TARGET_COMMON_QTI_COMPONENTS)))
   ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
     include $(QCOM_COMMON_PATH)/vendor/adreno/qti-adreno.mk
-  else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953),true)
+  else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953 sdm660),true)
     include $(QCOM_COMMON_PATH)/vendor/adreno-5xx/qti-adreno-5xx.mk
   else
     include $(QCOM_COMMON_PATH)/vendor/adreno-6xx-legacy/qti-adreno-6xx-legacy.mk
@@ -164,7 +164,7 @@ ifneq (,$(filter vibrator, $(TARGET_COMMON_QTI_COMPONENTS)))
 endif
 
 ifneq (,$(filter wfd, $(TARGET_COMMON_QTI_COMPONENTS)))
-  ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953),true)
+  ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953 sdm660),true)
     include $(QCOM_COMMON_PATH)/system/wfd-legacy/qti-wfd-legacy.mk
     include $(QCOM_COMMON_PATH)/vendor/wfd-legacy/qti-wfd-legacy.mk
   else

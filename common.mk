@@ -182,7 +182,9 @@ TARGET_FS_CONFIG_GEN += $(QCOM_COMMON_PATH)/config.fs
 # Power
 ifneq ($(TARGET_PROVIDES_POWERHAL),true)
 ifneq ($(TARGET_PROVIDES_XIAOMI_POWERHAL), true)
+ifneq ($(TARGET_PROVIDES_MOTO_POWERHAL), true)
 $(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
+endif
 endif
 endif
 

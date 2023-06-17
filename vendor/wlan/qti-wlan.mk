@@ -58,13 +58,8 @@ CONFIG_IEEE80211AX := true
 endif
 
 # IPACM
-ifneq ($(TARGET_COMMON_QTI_COMPONENTS), telephony)
-ifneq (,$(filter 5.4 5.10, $(TARGET_KERNEL_VERSION)))
+#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
-else
-$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr-legacy/ipacm_vendor_product.mk)
-endif
-endif
 
 # Include QCOM WLAN makefiles.
 ifeq ($(call is-board-platform-in-list,sdm845),true)

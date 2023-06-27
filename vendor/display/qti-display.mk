@@ -47,7 +47,7 @@ endif
 # Copy feature_enabler rc only for lahaina on 5.4
 ifeq ($(call is-board-platform-in-list, lahaina),true)
 PRODUCT_COPY_FILES += \
-    device/qcom/common/vendor/display/5.4/feature_enabler_client.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/feature_enabler_client.rc
+    device/xperience/common/vendor/display/5.4/feature_enabler_client.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/feature_enabler_client.rc
 endif
 
 # Get non-open-source specific aspects.

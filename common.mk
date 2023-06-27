@@ -147,16 +147,22 @@ include $(QCOM_COMMON_PATH)/utils.mk
 
 ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.15
+HW_VARIANT := sm8550
 else ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.10
+HW_VARIANT := sm8450
 else ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.4
+HW_VARIANT := sm8350
 else ifeq ($(call is-board-platform-in-list,$(4_19_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.19
+HW_VARIANT := sm8250
 else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.14
+HW_VARIANT := sm8150
 else ifeq ($(call is-board-platform-in-list,$(4_9_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.9
+HW_VARIANT := sm845
 else ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.4
 else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)

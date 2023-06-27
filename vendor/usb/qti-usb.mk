@@ -23,7 +23,7 @@ TARGET_HAS_DIAG_ROUTER := true
 endif
 
 ifeq (,$(filter 4.19 5.4 5.10, $(TARGET_KERNEL_VERSION)))
-PRODUCT_PACKAGES += android.hardware.usb@1.0-service
+PRODUCT_PACKAGES += android.hardware.usb@1.3-service-qti
 endif
 
 PRODUCT_COPY_FILES += \

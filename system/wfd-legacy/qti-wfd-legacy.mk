@@ -14,6 +14,14 @@
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += device/xperience/common/system/wfd-legacy/configs/vintf/framework_manifest.xml
 
+PRODUCT_SOONG_NAMESPACES += \
+    device/xperience/common/vendor/gps-legacy
+
+# Flags
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+LOC_HIDL_VERSION := 4.0
+
+# Overlays
 PRODUCT_PACKAGES += \
     libnl
 

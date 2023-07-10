@@ -29,11 +29,9 @@ QCOM_BOARD_PLATFORMS += \
     apq8098_latv \
     atoll \
     bengal \
-    bengal_515 \
     crow \
     holi \
     kona \
-    kona_515 \
     kalama \
     lahaina \
     lito \
@@ -105,9 +103,7 @@ include $(QCOM_COMMON_PATH)/utils.mk
 
 # Kernel Families
 5_15_FAMILY := \
-    bengal_515 \
     crow \
-    kona_515 \
     kalama \
     monaco
 

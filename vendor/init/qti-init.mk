@@ -46,6 +46,7 @@ endif
 
 # Init
 PRODUCT_PACKAGES += \
+    init.qcom.xpe.rc \
     init.class_main.sh \
     init.crda.sh \
     init.mdm.sh \

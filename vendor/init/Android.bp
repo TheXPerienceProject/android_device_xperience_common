@@ -30,6 +30,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.qcom.xpe.rc",
+    src: "init.qcom.xpe.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.qti.kernel.rc",
     src: "init.qti.kernel.rc",
     sub_dir: "init/hw",

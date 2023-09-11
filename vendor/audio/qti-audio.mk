@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsndcardparser \
     libsndmonitor \
     libspkrprot \
     libssrec \

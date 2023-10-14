@@ -12,25 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-5_4_FM := lahaina holi
-4_19_FM := bengal kona lito
-4_14_FM := trinket atoll msmnile msmnile_au
-
-ifneq ($(filter $(5_4_FM),$(TARGET_BOARD_PLATFORM)),)
-VARIANT := sm8350
-else ifneq ($(filter $(4_19_FM),$(TARGET_BOARD_PLATFORM)),)
-VARIANT := sm8250
-else ifneq ($(filter $(4_14_FM),$(TARGET_BOARD_PLATFORM)),)
-VARIANT := sm8150
-else ifneq ($(filter sdm710 sdm845 qcs605,$(TARGET_BOARD_PLATFORM)),)
-VARIANT := sdm845
-endif
-
 ifeq ($(call is-board-platform-in-list,sm6150),true)
 -include $(TOPDIR)hardware/qcom-caf/sm8150/audio/configs/msmsteppe/msmsteppe.mk
+else ifeq ($(call is-board-platform-in-list,taro parrot ),true)
+-include $(TOPDIR)hardware/qcom-caf/$(HW_VARIANT)/audio/primary-hal/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 else
--include $(TOPDIR)hardware/qcom-caf/$(VARIANT)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
+-include $(TOPDIR)hardware/qcom-caf/$(HW_VARIANT)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 endif
+
+$(warning "AUDIO variant is $(HW_VARIANT) and platform $(TARGET_BOARD_PLATFORM) ")
 
 # Build Qualcomm common audio overlay
 TARGET_USES_RRO := true

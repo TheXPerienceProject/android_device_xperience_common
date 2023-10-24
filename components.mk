@@ -55,11 +55,13 @@ endif
 
 ifneq (,$(filter adreno, $(TARGET_COMMON_QTI_COMPONENTS)))
   ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
-    include $(QCOM_COMMON_PATH)/vendor/adreno/qti-adreno.mk
-  else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953 sdm660),true)
-    include $(QCOM_COMMON_PATH)/vendor/adreno-5xx/qti-adreno-5xx.mk
+    TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-s
+  else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY) $(4_19_FAMILY) $(5_4_FAMILY)),true)
+    TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-r
+  else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953),true)
+    TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-5xx
   else
-    include $(QCOM_COMMON_PATH)/vendor/adreno-6xx-legacy/qti-adreno-6xx-legacy.mk
+    $(error "Adreno component is enabled, but there is not a variant available for your platform.")
   endif
 endif
 

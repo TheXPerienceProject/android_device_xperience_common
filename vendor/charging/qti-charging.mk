@@ -15,6 +15,10 @@
 # Health
 ifeq ($(TARGET_USE_AIDL_QTI_HEALTH),true)
 $(call inherit-product, vendor/qcom/opensource/healthd-ext/health-vendor-product.mk)
+
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0.vendor \
+    android.hardware.health@2.1.vendor
 else
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \

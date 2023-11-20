@@ -54,7 +54,6 @@ QCOM_BOARD_PLATFORMS += \
     sdm845 \
     taro
 
-ifneq (,$(filter 3.18 4.4 4.9 4.14 4.19, $(TARGET_KERNEL_VERSION)))
 # List of targets that use video hardware.
 MSM_VIDC_TARGET_LIST := \
     $(MSMSTEPPE) \
@@ -62,7 +61,6 @@ MSM_VIDC_TARGET_LIST := \
     apq8084 \
     apq8098_latv \
     atoll \
-    bengal \
     kona \
     lito \
     msm8226 \
@@ -82,7 +80,6 @@ MSM_VIDC_TARGET_LIST := \
     sdm660 \
     sdm710 \
     sdm845
-endif
 
 ifneq (,$(filter 3.18 4.4 4.9 4.14 4.19, $(TARGET_KERNEL_VERSION)))
 # List of targets that use master side content protection.

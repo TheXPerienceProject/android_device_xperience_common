@@ -1,4 +1,4 @@
-# Copyright 2021 Paranoid Android
+# Copyright 2023 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -103,6 +103,9 @@ endif
 # Include QCOM board utilities.
 include $(QCOM_COMMON_PATH)/utils.mk
 
+6_1_FAMILY := \
+    pineapple
+
 # Kernel Families
 5_15_FAMILY := \
     crow \
@@ -143,7 +146,9 @@ include $(QCOM_COMMON_PATH)/utils.mk
     msm8937 \
     msm8996
 
-ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
+ifeq ($(call is-board-platform-in-list,$(6_1_FAMILY)),true)
+TARGET_KERNEL_VERSION ?= 6.1
+else ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.15
 HW_VARIANT := sm8550
 else ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)

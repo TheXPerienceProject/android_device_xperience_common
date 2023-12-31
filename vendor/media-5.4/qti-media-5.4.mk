@@ -21,6 +21,10 @@ TARGET_MEDIA_COMPONENT_VARIANT := media-5.4
 $(warning variant is : $(HW_VARIANT))
 $(call inherit-product-if-exists, hardware/qcom-caf/$(HW_VARIANT)/media/product.mk)
 
+# Enable 64-bit mediaserver
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.mediaserver.64b.enable=true
+
 # Media Codecs
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \

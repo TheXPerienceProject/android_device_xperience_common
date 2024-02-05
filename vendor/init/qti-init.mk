@@ -87,6 +87,11 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.all.modules.ready=1
 endif
 
+else # < 5.4
+$(warning Building for kernel $(TARGET_KERNEL_VERSION). Only copying device/qcom/common/vendor/init/$(TARGET_BOARD_PLATFORM)/etc folder.)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/qcom/common/vendor/init/$(TARGET_BOARD_PLATFORM)/etc,$(TARGET_COPY_OUT_VENDOR)/etc/init)
+
 endif
 
 # Add legacy services and permissions for pre-5.10 targets

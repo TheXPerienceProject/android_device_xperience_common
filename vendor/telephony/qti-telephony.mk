@@ -27,9 +27,10 @@ $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_
 
 # IPACM
 ifneq (,$(filter 5.10 5.15, $(TARGET_KERNEL_VERSION)))
-$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+#$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+$(warning moved to hardware/qcom-caf/)
 else
-$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr-legacy/ipacm_vendor_product.mk)
+$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um/ipacm_vendor_product.mk)
 endif
 
 # RIL

@@ -21,6 +21,10 @@ PRODUCT_SOONG_NAMESPACES += \
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 4.3
 
+# Manifest
+DEVICE_MANIFEST_FILE += \
+    $(QCOM_COMMON_PATH)/vendor/gps-legacy/qcc-manifest.xml
+
 # Overlays
 PRODUCT_PACKAGES += \
     libnl

@@ -61,9 +61,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1
-
-
+    persist.vendor.radio.sib16_support=1 \
+    persist.vendor.ssr.restart_level=ALL_ENABLE
 
 ifeq ($(call is-board-platform-in-list, sdm660),true)
 #vendor prop to disable advanced network scanning

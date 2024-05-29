@@ -16,7 +16,7 @@
 <PowerFeature>
     <Feature>
         <Name>PSMPowerOptFeature</Name>
-        <Enable>1</Enable>
+        <Enable>0</Enable>
     </Feature>
     <Feature>
         <Name>VideoPowerOptFeature</Name>
@@ -24,7 +24,7 @@
     </Feature>
     <Feature>
         <Name>StandbyFeature</Name>
-        <Enable>1</Enable>
+        <Enable>0</Enable>
     </Feature>
     <Feature>
         <Name>VendorScenarioPowerOptFeature</Name>
@@ -36,7 +36,7 @@
     </Feature>
     <Feature>
         <Name>GamePowerOptFeature</Name>
-        <Enable>0</Enable>
+        <Enable>1</Enable>
     </Feature>
     <Feature>
         <Name>OffScreenPowerOptFeature</Name>

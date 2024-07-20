@@ -103,7 +103,6 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sdd/queue/read_ahead_kb 128
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
-<<<<<<<< HEAD:vendor/perf-legacy/init.xpe.perf.rc
 
 on property:ro.board.platform=msmnile && property:vendor.post_boot.parsed=1
     # Setup foreground cpuset for display composer.
@@ -120,5 +119,3 @@ on property:ro.board.platform=lahaina && property:vendor.post_boot.parsed=1
 on property:ro.board.platform=taro && property:vendor.post_boot.parsed=1
     # Setup foreground cpuset for display composer.
     write /dev/cpuset/foreground/cpus 0-6
-========
->>>>>>>> 813f39f5 (vendor: init: Separate common and SoC-specific tuning):vendor/init/init.aospa.perf.common.rc

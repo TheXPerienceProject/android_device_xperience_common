@@ -58,9 +58,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/wlan/qcwcn
 
 # Enable IEEE 802.11ax support
-ifneq (,$(filter 5.10 5.15, $(TARGET_KERNEL_VERSION)))
 CONFIG_IEEE80211AX := true
-endif
 
 # IPACM
 #PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr

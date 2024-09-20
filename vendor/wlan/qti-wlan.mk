@@ -55,6 +55,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant-V1-ndk.vendor \
     vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
 
+PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/wlan/qcwcn
+
 # Enable IEEE 802.11ax support
 ifneq (,$(filter 5.10 5.15, $(TARGET_KERNEL_VERSION)))
 CONFIG_IEEE80211AX := true

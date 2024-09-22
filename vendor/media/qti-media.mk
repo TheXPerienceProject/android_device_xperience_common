@@ -30,10 +30,8 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
-    libgui_vendor \
-    libstagefright_softomx.vendor \
-    libstagefrighthw
+    android.hardware.media.c2@1.2.vendor \
+    libavservices_minijail.vendor
 
 # Properties
 PRODUCT_SYSTEM_EXT_PROPERTIES += \

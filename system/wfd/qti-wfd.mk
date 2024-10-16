@@ -12,9 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_PACKAGES += \
-    libavservices_minijail \
-    libnl
+TARGET_WFD_COMPONENT_VARIANT := wfd
 
 PRODUCT_BOOT_JARS += \
     WfdCommon

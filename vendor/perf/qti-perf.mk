@@ -37,14 +37,7 @@ endif
 
 # Packages
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor \
     init.xperience.perf.rc \
-    android.hardware.thermal-V1-ndk.vendor \
-    libavservices_minijail.vendor \
-    libpsi.vendor \
-    libtflite \
-    vendor.qti.hardware.servicetracker@1.1.vendor \
-    vendor.qti.hardware.servicetrackeraidl-V1-ndk.vendor
 
 # Only copy task_profiles.json for 5.4 targets.
 ifeq ($(TARGET_KERNEL_VERSION),5.4)

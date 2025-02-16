@@ -24,10 +24,6 @@ source "${HELPER}"
 
 function vendor_imports() {
     cat <<EOF >>"$1"
-        "hardware/qcom/display",
-        "hardware/qcom/display/gralloc",
-        "hardware/qcom/display/libdebug",
-        "hardware/qcom/wlan/qcwcn",
         "vendor/qcom/common/vendor/adreno-5xx",
         "vendor/qcom/common/vendor/adreno-r",
         "vendor/qcom/common/vendor/adreno-s",

@@ -17,6 +17,7 @@ QCOM_COMMON_PATH := device/xperience/common
 ifeq ($(TARGET_BOARD_PLATFORM),)
 $(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile so it's accessible to QCOM common.")
 endif
+#$(warning "common - board $(TARGET_BOARD_PLATFORM)")
 
 # List of QCOM targets.
 MSMSTEPPE := sm6150
@@ -100,9 +101,9 @@ MASTER_SIDE_CP_TARGET_LIST := \
     sdm845
 endif
 
-# Include QCOM board utilities.
+## Include QCOM board utilities.
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
-include vendor/qcom/opensource/core-utils/build/utils.mk
+include $(QCOM_COMMON_PATH)/utils.mk
 endif
 
 6_1_FAMILY := \
@@ -173,18 +174,19 @@ TARGET_KERNEL_VERSION ?= 4.4
 else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 3.18
 endif
+$(warning "$(TARGET_KERNEL_VERSION)")
 
 ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
 # Compatibility matrix
-DEVICE_MATRIX_FILE += \
-    device/qcom/vendor-common/compatibility_matrix.xml
+#DEVICE_MATRIX_FILE += \
+#    device/qcom/vendor-common/compatibility_matrix.xml
 
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+#    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
 
-DEVICE_FRAMEWORK_MANIFEST_FILE += \
-    device/qcom/qssi/framework_manifest.xml
+#DEVICE_FRAMEWORK_MANIFEST_FILE += \
+#    device/qcom/qssi/framework_manifest.xml
 endif
 
 # Opt out of 16K alignment changes
@@ -211,7 +213,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 ifneq ($(TARGET_PROVIDES_POWERHAL),true)
 ifneq ($(TARGET_PROVIDES_XIAOMI_POWERHAL), true)
 ifneq ($(TARGET_PROVIDES_MOTO_POWERHAL), true)
-$(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
+#$(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
 endif
 endif
 endif

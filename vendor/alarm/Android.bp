@@ -7,8 +7,8 @@ soong_namespace {
 }
 
 prebuilt_etc {
-    name: "init.vendor.wlan.rc",
-    src: "init.vendor.wlan.rc",
+    name: "init.qcom.alarm.rc",
+    src: "init.qcom.alarm.rc",
     sub_dir: "init",
     vendor: true,
 }

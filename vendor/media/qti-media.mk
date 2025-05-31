@@ -16,9 +16,6 @@ $(warning "Media variant is $(VARIANT)")
 PRODUCT_VENDOR_PROPERTIES += \
     ro.mediaserver.64b.enable=true
 
-PRODUCT_COPY_FILES += \
-    device/xperience/common/vendor/media/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml
-
 # Packages
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2.vendor \

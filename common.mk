@@ -49,6 +49,7 @@ QCOM_BOARD_PLATFORMS += \
     msmnile_au \
     msm_bronze \
     parrot \
+    pineapple \
     qcs605 \
     sdm660 \
     sdm710 \
@@ -107,7 +108,8 @@ include $(QCOM_COMMON_PATH)/utils.mk
 endif
 
 6_1_FAMILY := \
-    pineapple
+    pineapple \
+    crow
 
 # Kernel Families
 5_15_FAMILY := \

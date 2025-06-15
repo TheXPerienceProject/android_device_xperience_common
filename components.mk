@@ -39,6 +39,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     gps \
     init \
+    lhdc \
     media \
     nfc \
     overlay \
@@ -119,6 +120,10 @@ endif
 
 ifneq (,$(filter keymaster, $(TARGET_COMMON_QTI_COMPONENTS)))
   include $(QCOM_COMMON_PATH)/vendor/keymaster/qti-keymaster.mk
+endif
+
+ifneq (,$(filter lhdc, $(TARGET_COMMON_QTI_COMPONENTS)))
+  include $(QCOM_COMMON_PATH)/system/lhdc/lhdc.mk
 endif
 
 ifneq (,$(filter media, $(TARGET_COMMON_QTI_COMPONENTS)))

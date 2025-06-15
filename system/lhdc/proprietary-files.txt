@@ -1,0 +1,4 @@
+system/lib64/liblhdcBT_enc.so
+system/lib64/liblhdc.so
+system/lib64/liblhdcv5BT_enc.so
+system/lib64/liblhdcv5.so

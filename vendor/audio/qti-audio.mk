@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_SOONG_NAMESPACES += \
+    device/xperience/common/vendor/audio
+
 5_4_FM := lahaina holi
 4_19_FM := bengal kona lito
 4_14_FM := trinket atoll msmnile msmnile_au

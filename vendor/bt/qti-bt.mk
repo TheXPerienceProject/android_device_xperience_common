@@ -15,6 +15,10 @@ endif
 
 # FM
 PRODUCT_PACKAGES += \
+    libbluetooth_qti \
+    libbluetooth_qti_jni \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    vendor.qti.hardware.btconfigstore@2.0 \
     vendor.qti.hardware.fm@1.0.vendor
 
 # Permissions

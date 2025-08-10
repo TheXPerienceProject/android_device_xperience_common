@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: Paranoid Android
+# SPDX-FileCopyrightText: Paranoid Android | The XPerience Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -205,15 +205,6 @@ TARGET_DYNAMIC_64_32_MEDIASERVER := true
 # Partition source order for Product/Build properties pickup.
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.product.property_source_order=odm,vendor,product,system_ext,system
-
-# Power
-ifneq ($(TARGET_PROVIDES_POWERHAL),true)
-ifneq ($(TARGET_PROVIDES_XIAOMI_POWERHAL), true)
-ifneq ($(TARGET_PROVIDES_MOTO_POWERHAL), true)
-#$(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
-endif
-endif
-endif
 
 # Public Libraries
 PRODUCT_COPY_FILES += \

@@ -248,4 +248,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.vendor.qti.va_aosp.support=1
 
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.qti.va_odm.support=1
+
 endif # QCOM_BOARD_PLATFORMS

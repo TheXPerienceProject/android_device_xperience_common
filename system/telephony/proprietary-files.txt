@@ -325,6 +325,8 @@ system_ext/priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk
 system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 system_ext/priv-app/ims/ims.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+system/etc/permissions/uimremoteclient.xml
+system/etc/permissions/uimremoteserver.xml
 system/framework/tcmclient.jar
 system/framework/vendor.qti.hardware.data.connectionaidl-V1-java.jar
 system/framework/vendor.qti.hardware.radio.qtiradio-V1-java.jar

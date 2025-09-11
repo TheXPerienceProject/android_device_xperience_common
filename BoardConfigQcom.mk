@@ -35,3 +35,5 @@ TARGET_MOUNT_POINTS_SYMLINKS ?= false
 #else
 #include device/qcom/sepolicy-legacy/SEPolicy.mk
 #endif
+# TODO(b/147756744) Re-evaluate sdclang environment variable usage
+BUILD_BROKEN_NINJA_USES_ENV_VARS := SDCLANG_AE_CONFIG SDCLANG_CONFIG SDCLANG_SA_ENABLED

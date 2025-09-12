@@ -159,6 +159,10 @@ ifneq (,$(filter telephony, $(TARGET_COMMON_QTI_COMPONENTS)))
   include $(QCOM_COMMON_PATH)/vendor/telephony/qti-telephony.mk
 endif
 
+ifneq (,$(filter telephony_sys, $(TARGET_COMMON_QTI_COMPONENTS)))
+  include $(QCOM_COMMON_PATH)/system/telephony/qti-telephony.mk
+endif
+
 ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
   include $(QCOM_COMMON_PATH)/vendor/usb/qti-usb.mk
 endif

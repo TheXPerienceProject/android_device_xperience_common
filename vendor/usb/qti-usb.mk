@@ -6,15 +6,12 @@
 PRODUCT_SOONG_NAMESPACES += \
     device/xperience/common/vendor/usb
 
-# Inherit from the USB product definition.
-$(call inherit-product, hardware/xperience/interfaces/usb/1.3/vendor_product.mk)
-
 ifneq (,$(filter 5.4 5.10 5.15, $(TARGET_KERNEL_VERSION)))
 TARGET_HAS_DIAG_ROUTER := true
 endif
 
 ifeq (,$(filter 4.19 5.4 5.10 5.15, $(TARGET_KERNEL_VERSION)))
-PRODUCT_PACKAGES += android.hardware.usb@1.3-service-qti
+PRODUCT_PACKAGES += android.hardware.usb-service.qti
 endif
 
 ifeq (,$(filter 4.4 4.9 4.14 4.19 5.4, $(TARGET_KERNEL_VERSION)))

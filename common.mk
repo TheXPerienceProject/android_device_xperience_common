@@ -6,8 +6,10 @@
 QCOM_COMMON_PATH := device/xperience/common
 
 ifeq ($(TARGET_BOARD_PLATFORM),)
-$(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile so it's accessible to QCOM common.")
+$(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile aka device.mk or common.mk so it's accessible to QCOM common.")
 endif
+
+ifeq ($(filter mt%,$(TARGET_BOARD_PLATFORM)),)
 #$(warning "common - board $(TARGET_BOARD_PLATFORM)")
 
 # List of QCOM targets.
@@ -182,7 +184,7 @@ DEVICE_MATRIX_FILE += \
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
 
-DEVICE_FRAMEWORK_MANIFEST_FILE += \
+#DEVICE_FRAMEWORK_MANIFEST_FILE += \
     device/qcom/qssi/framework_manifest.xml
 endif
 
@@ -233,3 +235,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.manufacturer=QTI
 
 endif # QCOM_BOARD_PLATFORMS
+else
+# If it is MediaTek, print an optional message in the build log.
+$(info XPerience: Skipped QCOM common for MediaTek platform: $(TARGET_BOARD_PLATFORM))
+endif # end mtk

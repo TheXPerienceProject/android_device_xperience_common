@@ -235,7 +235,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.manufacturer=QTI
 
 endif # QCOM_BOARD_PLATFORMS
+
 else
 # If it is MediaTek, print an optional message in the build log.
-$(info XPerience: Skipped QCOM common for MediaTek platform: $(TARGET_BOARD_PLATFORM))
+#$(info "XPerience: Skipped QCOM common for MediaTek platform: $(TARGET_BOARD_PLATFORM)")
+$(warning "XPerience: Skipped QCOM common for MediaTek platform: $(TARGET_BOARD_PLATFORM)")
 endif # end mtk
